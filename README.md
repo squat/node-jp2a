@@ -11,13 +11,10 @@ Install with [npm](https://npmjs.org/):
 node-jp2a requires that the jp2a CLI tool be installed and available on the system's $PATH. The jp2a tool is a popular and widely available utility that should be avaiable in your system's package manager.
 
 For example:
-* on OS X you can install jp2a with [Homebrew](http://brew.sh/) by running:
 
-    $ brew install jp2a
+* on OS X you can install jp2a with [Homebrew](http://brew.sh/) by running: `$ brew install jp2a`
 
-* on Ubuntu/Debian you can install jp2a with `apt-get`:
-
-    $ sudo apt-get install jp2a
+* on Ubuntu/Debian you can install jp2a with `apt-get`: `$ sudo apt-get install jp2a`
 
 Please refer to the [jp2a](http://csl.name/jp2a/) documentation for help installing the tool.
 
@@ -116,7 +113,8 @@ KXXXO        ;MMMMNXXXXKx:.  ;xNMMMMWXXXXXkc.  .l0MMMMMNXXXXKx;.
 */
 ````
 
-*Advanced*
+#### Advanced
+
 node-jp2a allows you to pipe file data directly into jp2a's STDIN rather than supply jp2a with a file path. This is useful in applications where you are generating or manipulating jpgs on the fly and do not want to save an image to the file system. To do this, set the `data` attribute in the options hash. It should be noted that `data` takes priority over `src`.
 
 Example using STDIN:
