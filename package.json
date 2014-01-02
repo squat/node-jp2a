@@ -1,0 +1,26 @@
+{
+  "name": "jp2a",
+  "version": "0.1.0",
+  "description": "A node wrapper for the jp2a CLI tool",
+  "main": "jp2a.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lsvx/node-jp2a.git"
+  },
+  "keywords": [
+    "art",
+    "ascii",
+    "jp2a",
+    "jpg",
+    "jpeg"
+  ],
+  "author": "Lucas Serven <lserven@gmail.com>",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/lsvx/node-jp2a/issues"
+  },
+  "homepage": "https://github.com/lsvx/node-jp2a"
+}
