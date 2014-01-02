@@ -65,10 +65,33 @@ var processOptions = function( options ) {
  * function will throw any necessary errors.
  * @param {array|object|string} options - Some variable containg all the
  * parameters we wish to apply to the jp2a cli tool.
+ * @param {function} callback - The callback function that should be executed
+ * after conversion.
  * @returns undefined.
  */
-var validate = function( options ) {
+var validate = function( options, callback ) {
+    /** Ensure that options exists. */
+    if ( !options ) {
+        throw new TypeError( "You must supply at least one argument" );
+    }
 
+    /** Ensure that `options` is of the correct type. */
+    if ( Object.prototype.toString.call( options ) !== "[object Object]" && Object.prototype.toString.call( options ) !== "[object Array]" && Object.prototype.toString.call( options ) !== "[object String]" ) {
+        throw new TypeError( "First argument must be an array, object, or string" );
+    }
+
+    /**
+     * If `options` is a hash, ensure it has either a `src` or `data`
+     * attribute.
+     */
+    if ( Object.prototype.toString.call( options ) === "[object Object]" && !options.src && !options.data ) {
+        throw new TypeError( "You must supply either a src or data" );
+    }
+
+    /** Ensure that `callback` is a function. */
+    if ( Object.prototype.toString.call( callback ) !== "[object Function]" ) {
+        throw new TypeError( "Second argument must be a function" );
+    }
 };
 
 /**
@@ -79,8 +102,8 @@ var validate = function( options ) {
  * jp2a tool finishes converting the image.
  */
 module.exports = function( options, callback ) {
-    /** Validate the options and throw appropriate errors. */
-    validate( options );
+    /** Validate the options and callback and throw appropriate errors. */
+    validate( options, callback );
 
     /** Transform the options argument into an array of arguments for jp2a. */
     var args = processOptions( options );

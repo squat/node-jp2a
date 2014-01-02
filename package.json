@@ -1,6 +1,6 @@
 {
   "name": "jp2a",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A node wrapper for the jp2a CLI tool",
   "main": "jp2a.js",
   "scripts": {
