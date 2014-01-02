@@ -70,7 +70,7 @@ var processOptions = function( options ) {
  * @returns undefined.
  */
 var validate = function( options, callback ) {
-    /** Ensure that options exists. */
+    /** Ensure that `options` exists. */
     if ( !options ) {
         throw new TypeError( "You must supply at least one argument" );
     }
@@ -102,7 +102,7 @@ var validate = function( options, callback ) {
  * jp2a tool finishes converting the image.
  */
 module.exports = function( options, callback ) {
-    /** Validate the options and callback and throw appropriate errors. */
+    /** Validate the `options` and `callback` and throw appropriate errors. */
     validate( options, callback );
 
     /** Transform the options argument into an array of arguments for jp2a. */
